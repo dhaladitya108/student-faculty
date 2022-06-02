@@ -1,0 +1,11 @@
+.crd {
+  padding: 3em 2.5em;
+  background-color: white;
+  box-shadow: 0 12px 24px rbga(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+  max-width: 500px;
+}
+
+.vertical-padding {
+  margin-block: 10em;
+}
