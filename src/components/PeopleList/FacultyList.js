@@ -7,6 +7,21 @@ function FacultyList() {
   const [users, setUsers] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
+  const fetchData = () => {
+    fetch("https://iwtserver.herokuapp.com/getfaculties/")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setUsers(data);
+        setFilteredData(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handleFilter = (e) => {
     const searchUser = e.target.value;
     const newFilter = users.filter((v) => {
@@ -15,19 +30,6 @@ function FacultyList() {
     setFilteredData(newFilter);
   };
 
-  const fetchData = () => {
-    fetch("https://iwtserver.herokuapp.com/getfaculties/")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setUsers(data);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <Card>
       <h1 className="subheading">Faculties List</h1>

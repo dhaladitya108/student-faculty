@@ -21,6 +21,11 @@ function Navbar() {
           <ul className="navbar-nav mx-auto d-flex align-items-center">
             <li className="nav-item">
               <Link className="nav-link" to="/">
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
                 Blog
               </Link>
             </li>

@@ -8,7 +8,7 @@ function Dashboard() {
     <>
       <Navbar />
       <div className="d-flex">
-        <FacultyList />
+      <FacultyList />
         <StudentList />
       </div>
     </>
