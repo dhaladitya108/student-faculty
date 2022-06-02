@@ -3,6 +3,7 @@ import FacultyList from "../components/PeopleList/FacultyList";
 import StudentList from "../components/PeopleList/StudenList";
 
 function Dashboard() {
+
   return (
     <>
       <Navbar />

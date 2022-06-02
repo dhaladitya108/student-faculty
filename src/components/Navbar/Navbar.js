@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import pic from "../../images/profile-img-sm.png";
 
 function Navbar() {
   return (
@@ -17,25 +18,10 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
-                Student
-              </Link>
-            </li>
+          <ul className="navbar-nav mx-auto d-flex align-items-center">
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Faculty
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Browse Faculty
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Browse Student
+                Blog
               </Link>
             </li>
             <li className="nav-item">
@@ -49,8 +35,26 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/register/student"
+              >
+                Student Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/register/faculty"
+              >
+                Faculty Register
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/profile">
-                Profile
+                <img src={pic} alt="profileImage" class="profile__img-nav" />
               </Link>
             </li>
           </ul>

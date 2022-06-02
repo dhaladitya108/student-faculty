@@ -44,6 +44,9 @@ const Profile = () => {
       margin-top: 1rem;
     }
   `;
+
+  
+
   return (
     <>
       <Navbar />
