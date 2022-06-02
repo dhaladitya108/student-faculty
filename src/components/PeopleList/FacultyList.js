@@ -5,6 +5,15 @@ import { Link } from "react-router-dom";
 
 function FacultyList() {
   const [users, setUsers] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const handleFilter = (e) => {
+    const searchUser = e.target.value;
+    const newFilter = users.filter((v) => {
+      return v.fullname.toLowerCase().includes(searchUser.toLowerCase());
+    });
+    setFilteredData(newFilter);
+  };
 
   const fetchData = () => {
     fetch("https://iwtserver.herokuapp.com/getfaculties/")
@@ -22,10 +31,16 @@ function FacultyList() {
   return (
     <Card>
       <h1 className="subheading">Faculties List</h1>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search here"
+        onChange={handleFilter}
+      />
       <div className="mt-4">
-        {users.length > 0 && (
+        {filteredData.length > 0 && (
           <ul className="unstyled-list">
-            {users.map((user) => (
+            {filteredData.map((user) => (
               <li key={user._id}>
                 <Link to={`profile/${user._id}`}>{user.fullname}</Link>
               </li>
