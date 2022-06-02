@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Navbar from "../components/Navbar/Navbar";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Profile = () => {
   const Wrapper = styled.div`
@@ -45,7 +47,28 @@ const Profile = () => {
     }
   `;
 
-  
+  const { id } = useParams();
+  const [user, setUser] = useState([]);
+
+  // let userUrl =
+  //   "https://iwtserver.herokuapp.com/faculty/6298d55181eb220016bdbe22";
+
+  const fetchData = () => {
+    fetch(`https://iwtserver.herokuapp.com/faculty/${id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setUser(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(user);
 
   return (
     <>
@@ -57,15 +80,15 @@ const Profile = () => {
             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
             alt="profile image...!"
           />
-          <p className="name">Andrew Mathew</p>
-          <p className="phone">Phone: +91-54893058650</p>
-          <p className="course">Course: btech</p>
-          <p className="branch">Branch: CSE</p>
+          <p className="name">{user.fullname}</p>
+          <p className="phone">Phone: {user.phone}</p>
+          <p className="course">Expertize: {user.expertize}</p>
+          <p className="branch">Qualification: {user.qualification}</p>
           <p className="year">Year of graduation: 2023</p>
         </Info>
         <Details>
           <h3>Hello Learner</h3>
-          <p className="email">Email: abc@test.com</p>
+          <p className="email">Email: {user.email}</p>
           <p className="reg">Registration Number: 4843516515</p>
         </Details>
       </Wrapper>

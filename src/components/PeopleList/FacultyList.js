@@ -1,6 +1,7 @@
 import Card from "../Card/Card";
 import "./PeopleList.css";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function FacultyList() {
   const [users, setUsers] = useState([]);
@@ -25,7 +26,9 @@ function FacultyList() {
         {users.length > 0 && (
           <ul className="unstyled-list">
             {users.map((user) => (
-              <li key={user._id}>{user.fullname}</li>
+              <li key={user._id}>
+                <Link to={`profile/${user._id}`}>{user.fullname}</Link>
+              </li>
             ))}
           </ul>
         )}
