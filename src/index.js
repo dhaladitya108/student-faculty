@@ -8,6 +8,7 @@ import FacultyLogin from "./pages/FacultyLogin";
 import FacultyRegister from "./pages/FacultyRegister";
 import StudentRegister from "./pages/StudentRegister";
 import Profile from "./pages/Profile";
+import Blogs from "./pages/Blogs";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/login/faculty" element={<FacultyLogin />} />
         <Route path="/register/faculty" element={<FacultyRegister />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/blog/" element={<Blogs />} />
       </Routes>
     </Router>
   </React.StrictMode>

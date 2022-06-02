@@ -1,7 +1,21 @@
 import Navbar from "../Navbar/Navbar";
 import Card from "../Card/Card";
+import { useState } from "react";
+
+// async function loginUser(credentials) {
+//   return fetch("https://iwtserver.herokuapp.com/login", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(credentials),
+//   }).then((data) => data.json());
+// }
 
 function Login(props) {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
   return (
     <>
       <Navbar />
