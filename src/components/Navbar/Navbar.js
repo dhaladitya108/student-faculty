@@ -19,32 +19,32 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" href="/">
+              <Link className="nav-link active" aria-current="page" to="/">
                 Student
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Faculty
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Browse Faculty
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Browse Student
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/login/student">
+              <Link className="nav-link" to="/login/student">
                 Student Login
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/login/faculty">
+              <Link className="nav-link" to="/login/faculty">
                 Faculty Login
               </Link>
             </li>
