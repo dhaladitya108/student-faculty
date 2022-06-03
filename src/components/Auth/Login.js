@@ -1,20 +1,20 @@
+import React, { useState, useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import Card from "../Card/Card";
-import { useState } from "react";
+import { AuthContext } from "../../context/AuthContext/AuthContext";
+import { login } from "../../context/AuthContext/ApiCalls";
 
-// async function loginUser(credentials) {
-//   return fetch("https://iwtserver.herokuapp.com/login", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(credentials),
-//   }).then((data) => data.json());
-// }
+// import { useNavigate } from "react-router-dom";
 
 function Login(props) {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { isFetching, dispatch } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    login({ email, password }, dispatch);
+  };
 
   return (
     <>
@@ -26,15 +26,30 @@ function Login(props) {
             <label for="email" class="form-label">
               Email address
             </label>
-            <input type="email" class="form-control" id="email" />
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div class="mb-4">
             <label for="password" class="form-label">
               Password
             </label>
-            <input type="password" class="form-control" id="password" />
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
-          <button type="submit" class="btn__primary">
+          <button
+            type="submit"
+            class="btn__primary"
+            onClick={handleLogin}
+            disabled={isFetching}
+          >
             Sign in
           </button>
         </form>
