@@ -44,7 +44,7 @@ function FacultyList() {
           <ul className="unstyled-list">
             {filteredData.map((user) => (
               <li key={user._id}>
-                <Link to={`profile/${user._id}`}>{user.fullname}</Link>
+                <Link to={`profile/faculty/${user._id}`}>{user.fullname}</Link>
               </li>
             ))}
           </ul>

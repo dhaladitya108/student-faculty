@@ -84,7 +84,7 @@ const Profile = () => {
           <p className="year">Year of graduation: 2023</p>
         </Info>
         <Details>
-          <h3>Hello Learner</h3>
+          <h3>Hello {user.fullname}</h3>
           <p className="email">Email: {user.email}</p>
           <p className="reg">Registration Number: 4843516515</p>
         </Details>

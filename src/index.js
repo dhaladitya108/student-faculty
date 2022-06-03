@@ -7,7 +7,8 @@ import StudentLogin from "./pages/StudentLogin";
 import FacultyLogin from "./pages/FacultyLogin";
 import FacultyRegister from "./pages/FacultyRegister";
 import StudentRegister from "./pages/StudentRegister";
-import Profile from "./pages/Profile";
+import StudentProfile from "./pages/FacultyProfile";
+import FacultyProfile from "./pages/FacultyProfile";
 import Blogs from "./pages/Blogs";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,7 +21,8 @@ root.render(
         <Route path="/register/student" element={<StudentRegister />} />
         <Route path="/login/faculty" element={<FacultyLogin />} />
         <Route path="/register/faculty" element={<FacultyRegister />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/profile/student/:id" element={<StudentProfile />} />
+        <Route path="/profile/faculty/:id" element={<FacultyProfile />} />
         <Route path="/blog/" element={<Blogs />} />
       </Routes>
     </Router>
