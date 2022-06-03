@@ -22,8 +22,12 @@ function App() {
             path="/login/student"
             element={user ? <Dashboard /> : <StudentLogin />}
           />{" "}
+          <Route
+            path="/login/faculty"
+            element={user ? <Dashboard /> : <FacultyLogin />}
+          />{" "}
           <Route path="/register/student" element={<StudentRegister />} />
-          <Route path="/login/faculty" element={<FacultyLogin />} />
+          {/* <Route path="/login/faculty" element={<FacultyLogin />} /> */}
           <Route path="/register/faculty" element={<FacultyRegister />} />
           <Route path="/profile/student/:id" element={<StudentProfile />} />
           <Route path="/profile/faculty/:id" element={<FacultyProfile />} />
