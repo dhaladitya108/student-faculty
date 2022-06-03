@@ -58,9 +58,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/profile">
-                <img src={pic} alt="profileImage" class="profile__img-nav" />
-              </Link>
+              <img src={pic} alt="profileImage" class="profile__img-nav" />
             </li>
           </ul>
         </div>

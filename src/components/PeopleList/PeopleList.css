@@ -1,0 +1,11 @@
+.user__name {
+  background: rgb(240, 240, 240);
+  padding: 0.75em;
+
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.user__name a {
+  color: black;
+  text-decoration: none;
+}

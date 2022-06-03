@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Profile = () => {
+const StudentProfile = () => {
   const Wrapper = styled.div`
     margin: 10em auto;
     padding: 3em 2.5em;
@@ -79,12 +79,12 @@ const Profile = () => {
           />
           <p className="name">{user.fullname}</p>
           <p className="phone">Phone: {user.phone}</p>
-          <p className="course">Expertize: {user.expertize}</p>
-          <p className="branch">Qualification: {user.qualification}</p>
+          <p className="course">Course: {user.course}</p>
+          <p className="branch">College: {user.college}</p>
           <p className="year">Year of graduation: 2023</p>
         </Info>
         <Details>
-          <h3>Hello Learner</h3>
+          <h3>Hello {user.fullname}</h3>
           <p className="email">Email: {user.email}</p>
           <p className="reg">Registration Number: 4843516515</p>
         </Details>
@@ -93,4 +93,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default StudentProfile;

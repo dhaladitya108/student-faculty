@@ -41,14 +41,14 @@ function StudentList() {
       />
       <div className="mt-4">
         {filteredData.length > 0 && (
-          <ul className="unstyled-list">
+          <div className="unstyled-list">
             {filteredData.map((user) => (
-              <li key={user._id}>
+              <div key={user._id} className="user__name">
 
                 <Link to={`profile/student/${user._id}`}>{user.fullname}</Link>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </Card>

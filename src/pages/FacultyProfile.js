@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Profile = () => {
+const FacultyProfile = () => {
   const Wrapper = styled.div`
     margin: 10em auto;
     padding: 3em 2.5em;
@@ -93,4 +93,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default FacultyProfile;

@@ -7,7 +7,7 @@ import StudentLogin from "./pages/StudentLogin";
 import FacultyLogin from "./pages/FacultyLogin";
 import FacultyRegister from "./pages/FacultyRegister";
 import StudentRegister from "./pages/StudentRegister";
-import StudentProfile from "./pages/FacultyProfile";
+import StudentProfile from "./pages/StudentProfile";
 import FacultyProfile from "./pages/FacultyProfile";
 import Blogs from "./pages/Blogs";
 
