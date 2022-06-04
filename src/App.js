@@ -10,6 +10,7 @@ import FacultyProfile from "./pages/FacultyProfile";
 import Blogs from "./pages/Blogs";
 import { AuthContext } from "../src/context/AuthContext/AuthContext";
 
+
 function App() {
   const { user } = useContext(AuthContext);
 
